@@ -1,25 +1,32 @@
 //Задание 18 (2)
-let a = /http:+/.test('https://asdasdasdasd asdasd asdasdasdasd');
-console.log("На http:// -", a);
-let a1 = /https:+/.test('https://asdasdasdasd http://asdasd asdasdasdasd');
-console.log("На https:// -", a1);
+let a = "https://www.youtube.com";
+let reg18 = /http+/.test(a);
+let reg181 = /https+/.test(a);
+if (reg18 == true || reg181 == true)
+	console.log("Cсылка: true");
+else 
+	console.log('Cсылка: false');
 
 //Задание 18 (4)
-let b = /jpg+/.test('asdasdasdasd.jpeg asdasdasdcxz');
-console.log("На .jpg -", b);
-let b1 = /jpeg+/.test('asdasdasdasd.jpeg asdasdasdcxz');
-console.log("На .jpeg -", b1);
+let b = 'NeStavte3.jpeg';
+let jpg18 = /jpg/.test(b);
+let jpg181 = /jpeg/.test(b);
+if (jpg18 == true || jpg181 == true)
+	console.log("Картинка: true");
+else 
+	console.log('Картинка: false');
 
 //Задание 18 (6)
-let c = /\d{12}/.test('1234567891012323');
-console.log("Строка из 12: ", c);
+let c = '122352363464';
+let c1 = /^\d{1,12}$/.test(c);
+console.log("Строка от 1 до 12: ", c1);
 
 //Задание 18 (8)
-let d = /\d{2}\.\d{2}\.\d{4}/.test('02.02.2002');
+let d = /^(0?[1-9]|[12][0-9]|3[01])\.(0?[1-9]|1[012])\.\d{4}$/.test('31.12.2002'); //Проверка на dd.mm.year
 console.log('Верный формат даты: ', d);
 
 //Задание 18 (10)
-let mail = /.+@.+/.test('zhernosek000@gmail.com');
+let mail = /[^\s]+@+[^\s\.]+\.+[a-z]+/.test('zhernosek000@gmail.com');
 console.log("Корректный адрес мыла: ", mail);
 
 //Задание 19 (1)
@@ -37,7 +44,7 @@ console.log('2-й карман: ',res20[2]);
 //Задание 21 (1)
 let str21 = '12 34 56 78';
 let res21 = str21.replace(/([1-9]+)([1-9]+)/g, '$2$1');
-console.log('Задание 21: ', res21);
+console.log(res21);
 
 //Задание 22 (1)
 let str22 = 'a1b2c3';
